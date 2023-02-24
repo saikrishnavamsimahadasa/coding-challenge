@@ -1,0 +1,3 @@
+
+> A data model is created to represent the weather data records using the database Engine MySQL.
+> The DDL statements can be found at the location : src/problem_1.sql

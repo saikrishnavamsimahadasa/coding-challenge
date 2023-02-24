@@ -1,0 +1,157 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "Coding Challenge - By SAI KRISHNA VAMSI MAHADASA",
+      "version": "1.0.0",
+      "title": "Weather Data and Stats"
+      },
+    "tags": [
+        {
+          "name": "WeatherData API"
+        }
+      ],
+    "components": {
+        "schemas": {
+            "FilterParameters": {
+                "type": "object",
+                "properties": {
+                    "station_id": {
+                    "type": "string"
+                    },
+                    "date": {
+                    "type": "Date"
+                    }
+                }
+            },
+            "Recorded Weather Data ": {
+                    "type": "object",
+                    "properties": {
+                        "Station_ID": {
+                        "type": "string"
+                        },
+                        "Recorded_date": {
+                        "type": "string"
+                        },
+                        "Max_temp (celsius)": {
+                            "type": "float"
+                        },
+                        "Min_temp (celsius)": {
+                            "type": "float"
+                        },
+                        "Precipitation (cm)": {
+                            "type": "float"
+                        }
+                    }
+            },
+            "Weather Data Stats": {
+                "type": "object",
+                "properties": {
+                    "Station_ID": {
+                    "type": "string"
+                    },
+                    "Recorded_year": {
+                    "type": "string"
+                    },
+                    "Avg_max_temp (celsius)": {
+                        "type": "float"
+                    },
+                    "Avg_min_temp (celsius)": {
+                        "type": "float"
+                    },
+                    "Total_precipitation (cm)": {
+                        "type": "float"
+                    }
+                }
+            }
+        }},
+    "paths": {
+        "/api/weather/{page}":{
+
+            "get" :{
+                "tags": [
+                    "Recorded Weather Data"
+                ],
+                "summary": "To get information about weather data - Daywise",
+                "parameters": [{
+                  "name": "page",
+                  "in": "path",
+                  "description": "Each page contains 10 weather records (Total Data records - 1,729,957)",
+                  "required": true,
+                  "schema" : {
+                    "type": "integer"
+                  }
+                },
+                {
+                "name": "station_id",
+                "in": "query",
+                "description": "weather station id (Eg: USC00110072)",
+                "schema" : {
+                    "type": "string"
+                }
+                },
+                {
+                "name": "date",
+                "in": "query",
+                "description": "weather recorded date (Eg: 1985-01-01)",
+                "schema" : {
+                    "type": "string"
+                }
+                }],
+               
+                "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "404": {
+                    "description": "NOT FOUND"
+                }
+                }
+            }
+
+        },
+        "/api/weather/stats/{page}":{
+
+            "get" :{
+                "tags": [
+                    "Weather Data Stats"
+                ],
+                "summary": "To get information about weather stats - for every Year and for every Weather Station",
+                "parameters": [{
+                  "name": "page",
+                  "in": "path",
+                  "description": "Each page contains 10 weather stats (Total Stats : 4,820)",
+                  "required": true,
+                  "schema" : {
+                    "type": "integer"
+                  }
+                },
+                {
+                "name": "station_id",
+                "in": "query",
+                "description": "weather station id (Eg: USC00110072)",
+                "schema" : {
+                    "type": "string"
+                }
+                },
+                {
+                "name": "year",
+                "in": "query",
+                "description": "weather recorded year (Eg: 1985)",
+                "schema" : {
+                    "type": "string"
+                }
+                }],
+               
+                "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "404": {
+                    "description": "NOT FOUND"
+                }
+                }
+            }
+
+        }
+    }
+}

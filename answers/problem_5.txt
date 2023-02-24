@@ -1,0 +1,19 @@
+I have worked on the following AWS services and I believe those services can be useful in deploying the API, Database and a scheduled version of your data ingestion code.
+
+1. AWS Lambda: 
+    > AWS Lambda is a Serverless Compute Engine which allows us to run the code without managing servers.
+    > Data Ingestion code can be written in Python programming language utilizing AWS SDK (Boto3 library) to connect to various other AWS services.
+    > The Lambda function can be scheduled using CRON jobs. Also, Lambda function can be triggered when a data file is put into specific AWS S3 Bucket.
+
+2. Amazon API GATEWAY:
+    > This service can be used to create, deploy and manage APIs.
+    > For each deployment stage, REST API endpoints can be created for a particular resource path.
+    > These API endpoints can be used to trigger specific lambda functions through an event (JSON).
+
+3. Amazon RDS:
+    > This is a Relational Database Service which can support various database engines like MySQL, PostgreSQL, etc.,
+    > In this coding exercise, the data has a fixed schema. So, Amazon RDS can be used for data storage.
+
+4. AWS CloudFormation:
+    > AWS CloudFormation can be used to deploy the Infrastructure as Code.
+    > This service can automate the process throughout the various deployment stages like Development, Testing, QA and Production.

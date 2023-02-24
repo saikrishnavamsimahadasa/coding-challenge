@@ -1,0 +1,6 @@
+
+Data Ingestion source code file can be found at the location : src/problem_2.py
+
+Output:
+Total time taken to ingest the weather data into the database :  446.19220066070557  seconds
+Total number of weather records ingested into the database table :  1729957

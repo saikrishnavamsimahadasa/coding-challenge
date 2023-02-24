@@ -1,0 +1,12 @@
+
+> REST API is created using Flask framework. ] 
+> Also included Swagger/OpenAPI endpoint for providing automatic documentation of the API.
+> Added Pagination (assumed per page records to be 10)
+> Added optional filter by date and station ID (where present) using the query string.
+> The source code is at the location : src/problem_4
+
+
+> Also included unit tests for testing the REST API. The unit test file is at the location : src/test_api.py
+
+
+Note: The unit test file can run when the API is running on the local server.

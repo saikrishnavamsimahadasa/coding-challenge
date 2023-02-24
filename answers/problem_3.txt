@@ -1,0 +1,8 @@
+
+> Data Analysis is done and the new model is created. The source code is at the location : src/problem_3/problem_3.sql
+> The Python file for inserting the obtained stats to the new model is at the location : src/problem_3/problem_3.py
+
+
+Output:
+Total time taken to ingest the weather stats into the database :  17.32013511657715  seconds
+Total number of weather stats ingested into the database table :  4820
